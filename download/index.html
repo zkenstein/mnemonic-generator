@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Among Us Scratch OJ - 下载中心</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c0c2d, #1e1e3c, #2a0a3a);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .background-art {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.1;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 0, 0, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0, 255, 0, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 30% 70%, rgba(0, 0, 255, 0.2) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .crewmate {
+            position: absolute;
+            width: 100px;
+            height: 120px;
+            background: #ff5555;
+            border-radius: 50% 50% 40% 40%;
+            z-index: 1;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+        
+        .crewmate:nth-child(2) {
+            background: #55aaff;
+            top: 20%;
+            left: 10%;
+            animation-delay: -3s;
+            animation-duration: 20s;
+        }
+        
+        .crewmate:nth-child(3) {
+            background: #ffaa55;
+            top: 70%;
+            left: 80%;
+            animation-delay: -7s;
+            animation-duration: 18s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(50px, 30px) rotate(5deg);
+            }
+            50% {
+                transform: translate(100px, 0) rotate(0deg);
+            }
+            75% {
+                transform: translate(50px, -30px) rotate(-5deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .logo {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            color: #ff5555;
+            text-shadow: 0 0 15px rgba(255, 85, 85, 0.5);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to right, #ff5555, #55aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            color: #aaccff;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .download-section {
+            background: rgba(20, 20, 40, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideUp 0.8s ease;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            color: #55aaff;
+        }
+        
+        .section-title i {
+            margin-right: 12px;
+            font-size: 1.5rem;
+        }
+        
+        .latest-release {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .version-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(to right, #ff5555, #ffaa55);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .version-number {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #ffaa55;
+        }
+        
+        .version-details {
+            margin-bottom: 15px;
+            opacity: 0.9;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .release-date, .file-size {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #aaccff;
+        }
+        
+        .release-notes {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 3px solid #ff5555;
+        }
+        
+        .release-notes h3 {
+            margin-bottom: 10px;
+            color: #55aaff;
+        }
+        
+        .release-notes ul {
+            padding-left: 20px;
+        }
+        
+        .release-notes li {
+            margin-bottom: 8px;
+            color: #ccc;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .release-notes li:before {
+            content: "•";
+            color: #ff5555;
+            position: absolute;
+            left: -10px;
+        }
+        
+        .download-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-width: 280px;
+        }
+        
+        .primary-download {
+            background: linear-gradient(to right, #ff5555, #ffaa55);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            font-size: 1.3rem;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 85, 85, 0.4);
+        }
+        
+        .primary-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 85, 85, 0.6);
+            background: linear-gradient(to right, #ff6666, #ffbb66);
+        }
+        
+        .platform-options {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .platform-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .platform-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .platform-btn.active {
+            background: rgba(85, 170, 255, 0.4);
+            border-color: #55aaff;
+        }
+        
+        .historical-releases {
+            margin-top: 40px;
+        }
+        
+        .versions-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .version-card {
+            background: rgba(30, 30, 60, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .version-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(85, 170, 255, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .version-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #ff5555, #55aaff);
+            opacity: 0.3;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .card-header h3 {
+            font-size: 1.4rem;
+            color: #ffaa55;
+        }
+        
+        .version-stable {
+            background: #55aaff;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+        
+        .version-beta {
+            background: #ffaa55;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+        
+        .card-details {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            opacity: 0.8;
+            color: #aaccff;
+        }
+        
+        .update-log {
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+        
+        .update-log ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .update-log li {
+            margin-bottom: 8px;
+            color: #ccc;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .update-log li:before {
+            content: "•";
+            color: #ff5555;
+            position: absolute;
+            left: -10px;
+        }
+        
+        .show-more {
+            color: #55aaff;
+            background: transparent;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .show-more:hover {
+            color: #ffaa55;
+            text-decoration: underline;
+        }
+        
+        .download-btn {
+            background: rgba(85, 170, 255, 0.2);
+            color: #55aaff;
+            border: 1px solid rgba(85, 170, 255, 0.4);
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        .download-btn:hover {
+            background: rgba(85, 170, 255, 0.3);
+        }
+        
+        .search-filter {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.7;
+        }
+        
+        .filter-select {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0 15px;
+            border-radius: 10px;
+            min-width: 150px;
+            height: 45px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #aaccff;
+            font-size: 1.2rem;
+        }
+        
+        .loading i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+            animation: spin 1.5s linear infinite;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .copyright {
+            margin-top: 10px;
+            color: #aaccff;
+        }
+        
+        a {
+            color: #55aaff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+            color: #ffaa55;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .latest-release {
+                flex-direction: column;
+            }
+            
+            .download-actions {
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .logo {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .version-number {
+                font-size: 1.8rem;
+            }
+            
+            .versions-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-filter {
+                flex-direction: column;
+            }
+            
+            .filter-select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-art"></div>
+    <div class="crewmate"></div>
+    <div class="crewmate"></div>
+    <div class="crewmate"></div>
+    
+    <div class="container">
+        <header>
+            <img alt="" src="../resource/230x0w.webp" class="logo"></img>
+            <h1>Among Us Scratch OJ</h1>
+            <p class="subtitle">使用 Scratch 复刻的 Among Us</p>
+        </header>
+        
+        <section class="download-section">
+            <h2 class="section-title">
+                <i class="fas fa-download"></i>下载最新版本
+            </h2>
+            
+            <div class="latest-release">
+                <div class="version-info" id="latest-version">
+                    <!-- 最新版本信息将由JS填充 -->
+                    <div class="loading">
+                        <i class="fas fa-spinner"></i>
+                        正在加载版本信息...
+                    </div>
+                </div>
+                
+                <div class="download-actions">
+                    <button class="primary-download" id="download-latest">
+                        <i class="fas fa-download"></i> 下载安装程序
+                    </button>
+                    
+                    <div class="platform-options">
+                        <div class="platform-btn active">
+                            <i class="fab fa-windows"></i> Windows
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="historical-releases">
+                <h2 class="section-title">
+                    <i class="fas fa-history"></i>历史版本下载
+                </h2>
+                
+                <div class="search-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="version-search" placeholder="搜索版本号...">
+                    </div>
+                    
+                    <select class="filter-select" id="version-filter">
+                        <option value="all">全部版本</option>
+                        <option value="stable">仅正式版</option>
+                        <option value="beta">测试版</option>
+                    </select>
+                </div>
+                
+                <div class="versions-container" id="versions-container">
+                    <!-- 历史版本将由JS填充 -->
+                    <div class="loading">
+                        <i class="fas fa-spinner"></i>
+                        正在加载历史版本...
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>需要帮助？加入我们的 <a href="https://qm.qq.com/q/IshSSjYFwc">QQ群</a> 或 <a href="https://github.com/zhuo-yue-shi/AmongUsSc">进入项目的Github界面</a></p>
+            <p class="copyright">© 2025 Among Us Scratch OJ | 保留所有权利</p>
+        </footer>
+    </div>
+
+    <script>
+        // 获取版本数据
+        async function fetchVersionData() {
+            try {
+                const response = await fetch('updatas.json');
+                const data = await response.json();
+                
+                return data;
+            } catch (error) {
+                console.error('获取版本数据失败:', error);
+                return [];
+            }
+        }
+
+        // 渲染最新版本
+        function renderLatestVersion(latest) {
+            const latestContainer = document.getElementById('latest-version');
+            
+            latestContainer.innerHTML = `
+                <div class="version-badge">
+                    <i class="fas fa-star"></i> 最新${latest.type}
+                </div>
+                <div class="version-number">${latest.ver}</div>
+                <div class="version-details">
+                    <span class="release-date">
+                        <i class="far fa-calendar"></i> 发布日期: ${latest.date}
+                    </span>
+                    <span class="file-size">
+                        <i class="far fa-hdd"></i> 文件大小: ${latest.size}
+                    </span>
+                </div>
+                <div class="release-notes">
+                    <h3>更新内容：</h3>
+                    <ul>
+                        ${latest.updata.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            
+            // 设置下载按钮
+            const downloadBtn = document.getElementById('download-latest');
+            downloadBtn.onclick = () => {
+                window.location.href = latest.url;
+            };
+        }
+
+        // 渲染历史版本
+        function renderHistoricalVersions(versions) {
+            const container = document.getElementById('versions-container');
+            
+            if (versions.length === 0) {
+                container.innerHTML = '<p class="no-results">没有找到历史版本</p>';
+                return;
+            }
+            
+            container.innerHTML = versions.map(version => `
+                <div class="version-card">
+                    <div class="card-header">
+                        <h3>${version.ver}</h3>
+                        <span class="${version.type === '正式版' ? 'version-stable' : 'version-beta'}">
+                            ${version.type}
+                        </span>
+                    </div>
+                    <div class="card-details">
+                        <span><i class="far fa-calendar"></i> ${version.date}</span>
+                        <span><i class="far fa-hdd"></i> ${version.size}</span>
+                    </div>
+                    <div class="update-log">
+                        <h4>更新内容：</h4>
+                        <ul>
+                            ${version.updata.slice(0, 2).map(item => `<li>${item}</li>`).join('')}
+                            ${version.updata.length > 2 ? 
+                                `<div class="additional-updates" style="display:none">
+                                    ${version.updata.slice(2).map(item => `<li>${item}</li>`).join('')}
+                                </div>` : ''}
+                        </ul>
+                        ${version.updata.length > 2 ? 
+                            `<button class="show-more">
+                                <i class="fas fa-chevron-down"></i> 查看全部 (${version.updata.length}条)
+                            </button>` : ''}
+                    </div>
+                    <button class="download-btn" data-url="${version.url}">
+                        <i class="fas fa-download"></i> 下载此版本
+                    </button>
+                </div>
+            `).join('');
+            
+            // 添加下载事件
+            document.querySelectorAll('.download-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    window.location.href = this.getAttribute('data-url');
+                });
+            });
+            
+            // 添加"查看更多"事件
+            document.querySelectorAll('.show-more').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const card = this.closest('.version-card');
+                    const additional = card.querySelector('.additional-updates');
+                    
+                    if (additional.style.display === 'none') {
+                        additional.style.display = 'block';
+                        this.innerHTML = `<i class="fas fa-chevron-up"></i> 收起内容`;
+                        card.style.height = 'auto';
+                    } else {
+                        additional.style.display = 'none';
+                        this.innerHTML = `<i class="fas fa-chevron-down"></i> 查看全部 (${version.updata.length}条)`;
+                    }
+                });
+            });
+        }
+
+        // 初始化页面
+        async function initPage() {
+            const versions = await fetchVersionData();
+            
+            if (versions.length === 0) {
+                document.getElementById('latest-version').innerHTML = 
+                    '<p class="error">无法加载版本信息，请稍后再试</p>';
+                document.getElementById('versions-container').innerHTML = 
+                    '<p class="error">无法加载历史版本</p>';
+                return;
+            }
+            
+            // 排序版本（按buildNum降序）
+            versions.sort((a, b) => b.buildNum - a.buildNum);
+            
+            // 最新版本是第一个
+            const latestVersion = versions[0];
+            renderLatestVersion(latestVersion);
+            
+            // 历史版本是其余部分
+            const historicalVersions = versions.slice(1);
+            renderHistoricalVersions(historicalVersions);
+            
+            // 搜索功能
+            document.getElementById('version-search').addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const cards = document.querySelectorAll('.version-card');
+                
+                cards.forEach(card => {
+                    const version = card.querySelector('h3').textContent.toLowerCase();
+                    if (version.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            // 筛选功能
+            document.getElementById('version-filter').addEventListener('change', function() {
+                const filterValue = this.value;
+                const cards = document.querySelectorAll('.version-card');
+                
+                cards.forEach(card => {
+                    const type = card.querySelector('.version-stable, .version-beta').textContent;
+                    
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else if (filterValue === 'stable' && type === '正式版') {
+                        card.style.display = 'block';
+                    } else if (filterValue === 'beta' && type === '测试版') {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initPage);
+    </script>
+</body>
+</html>
