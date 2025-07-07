@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Among Us Scratch OJ - ÎÄ¼şÏÂÔØ</title>
+    <title>Among Us Scratch OJ - æ–‡ä»¶ä¸‹è½½</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -24,28 +24,28 @@
     </style>
     <script>
     function downloadAllFiles() {
-      // ½âÎöURL²ÎÊı»ñÈ¡ÎÄ¼şÁĞ±í
+      // è§£æURLå‚æ•°è·å–æ–‡ä»¶åˆ—è¡¨
       const urlParams = new URLSearchParams(window.location.search);
       const filesParam = urlParams.get('files');
       
       if (!filesParam) {
-        alert('Î´ÕÒµ½ÎÄ¼ş²ÎÊı');
+        alert('æœªæ‰¾åˆ°æ–‡ä»¶å‚æ•°');
         return;
       }
 
-      // ·Ö¸îÎÄ¼şÃû²¢¹ıÂË¿ÕÖµ
+      // åˆ†å‰²æ–‡ä»¶åå¹¶è¿‡æ»¤ç©ºå€¼
       const fileList = filesParam.split(',').filter(file => file.trim());
 
       if (fileList.length === 0) {
-        alert('ÎÄ¼şÁĞ±íÎª¿Õ');
+        alert('æ–‡ä»¶åˆ—è¡¨ä¸ºç©º');
         return;
       }
 
-      // Öğ¸ö´´½¨Òş²ØÁ´½Ó´¥·¢ÏÂÔØ
+      // é€ä¸ªåˆ›å»ºéšè—é“¾æ¥è§¦å‘ä¸‹è½½
       fileList.forEach(file => {
         const link = document.createElement('a');
-        link.href = file.trim();  // Ê¹ÓÃÏà¶ÔÂ·¾¶
-        link.download = '';       // Ç¿ÖÆÏÂÔØ¶ø·Ç´ò¿ª
+        link.href = file.trim();  // ä½¿ç”¨ç›¸å¯¹è·¯å¾„
+        link.download = '';       // å¼ºåˆ¶ä¸‹è½½è€Œéæ‰“å¼€
         link.style.display = 'none';
         document.body.appendChild(link);
         link.click();
@@ -53,11 +53,11 @@
       });
     }
 
-    // Ò³Ãæ¼ÓÔØÍê³Éºó×Ô¶¯Ö´ĞĞÏÂÔØ
+    // é¡µé¢åŠ è½½å®Œæˆåè‡ªåŠ¨æ‰§è¡Œä¸‹è½½
     window.onload = downloadAllFiles;
   </script>
 </head>
 <body>
-    <div>ÎÄ¼şÏÂÔØÒÑ¿ªÊ¼...</div>
+    <div>æ–‡ä»¶ä¸‹è½½å·²å¼€å§‹...</div>
 </body>
 </html>
