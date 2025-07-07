@@ -1,14 +1,40 @@
 [
     {
-        "ver": "v1.0.1i",
+        "ver": "v1.0.2i",
         "buildNum": 3,
         "type": "正式版",
-        "date": "2025-7-7",
-        "size": "303 MB",
-        "url": "no.html",
+        "date": "2025-07-07",
+        "size": "125.2 MB",
+        "url": "download.html?files=Among%20Us%20Scratch%20OJ%20v1.0.2i%20Setup.part2.rar,Among%20Us%20Scratch%20OJ%20v1.0.2i%20Setup.part1.rar",
         "updata": [
-            "修复了bug",
-            "增加了功能"
+            "[更改] 更接近原版的设置",
+            "[修复] 修复躲猫猫船员非工程师的BUG",
+            "[修复] 修复玩法说明的BUG",
+            "[更改] 玩家名称被加上了边框",
+            "[云端] 此版本和之前的版本不可互相联机！"
+        ]
+    },
+    {
+        "ver": "v1.0.1i",
+        "buildNum": 2,
+        "type": "正式版",
+        "date": "2025-07-06",
+        "size": "159.9 MB",
+        "url": "http://150.138.83.69:20999/d/%E6%96%87%E4%BB%B6(%E9%80%9F%E5%BA%A6%E5%9B%A0%E7%BD%91%E8%80%8C%E5%BC%82)/auoj-update-file/Among%20Us%20Scratch%20%5BOJ%5D%20%5B1.0.1i%5D.zip?sign=ui-Tv2m6XjDki_e5Tk4dEqOouj1zPGGk9CvomGW3ZNE=:0",
+        "updata": [
+            "[新增] 略。"
+        ]
+    },
+    {
+        "ver": "v1.0.0i",
+        "buildNum": 1,
+        "type": "正式版",
+        "date": "2025-07-05",
+        "size": "158.2 MB",
+        "url": "http://150.138.83.69:20999/d/%E6%96%87%E4%BB%B6(%E9%80%9F%E5%BA%A6%E5%9B%A0%E7%BD%91%E8%80%8C%E5%BC%82)/auoj-update-file/Among%20Us%20Scratch%20%5BOJ%5D.zip?sign=UAxVefJSGqg9MJExb3ajVxznhTyxcfp8L04fENqo1Wc=:0",
+        "updata": [
+            "[新增] 更新系统。",
+            "[新增] 略。"
         ]
     },
     {

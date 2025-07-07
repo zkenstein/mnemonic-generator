@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Among Us Scratch OJ - 文件下载</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c0c2d, #1e1e3c, #2a0a3a);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            background-attachment: fixed;
+        }
+    </style>
+    <script>
+    function downloadAllFiles() {
+      // 解析URL参数获取文件列表
+      const urlParams = new URLSearchParams(window.location.search);
+      const filesParam = urlParams.get('files');
+      
+      if (!filesParam) {
+        alert('未找到文件参数');
+        return;
+      }
+
+      // 分割文件名并过滤空值
+      const fileList = filesParam.split(',').filter(file => file.trim());
+
+      if (fileList.length === 0) {
+        alert('文件列表为空');
+        return;
+      }
+
+      // 逐个创建隐藏链接触发下载
+      fileList.forEach(file => {
+        const link = document.createElement('a');
+        link.href = file.trim();  // 使用相对路径
+        link.download = '';       // 强制下载而非打开
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    }
+
+    // 页面加载完成后自动执行下载
+    window.onload = downloadAllFiles;
+  </script>
+</head>
+<body>
+    <div>文件下载已开始...</div>
+</body>
+</html>
