@@ -5,7 +5,7 @@
         "type": "正式版",
         "date": "2025-07-07",
         "size": "125.2 MB",
-        "url": "download.html?files=http://150.138.83.69:20999/d/%E6%96%87%E4%BB%B6(%E9%80%9F%E5%BA%A6%E5%9B%A0%E7%BD%91%E8%80%8C%E5%BC%82)/auoj-update-file/Among%20Us%20Scratch%20OJ%20v1.0.2i%20Setup.exe?sign=6w7vPsXVttJgkmaP2eYphUrW7DSWQYpxalrieXBmSsU=:0",
+        "url": "downloadFile/?files=http://150.138.83.69:20999/d/%E6%96%87%E4%BB%B6(%E9%80%9F%E5%BA%A6%E5%9B%A0%E7%BD%91%E8%80%8C%E5%BC%82)/auoj-update-file/Among%20Us%20Scratch%20OJ%20v1.0.2i%20Setup.exe?sign=6w7vPsXVttJgkmaP2eYphUrW7DSWQYpxalrieXBmSsU=:0",
         "updata": [
             "[更改] 更接近原版的设置",
             "[修复] 修复躲猫猫船员非工程师的BUG",
@@ -43,7 +43,7 @@
         "type": "测试版",
         "date": "2025-02-14",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[新增] 更新躲猫猫"
         ]
@@ -54,7 +54,7 @@
         "type": "测试版",
         "date": "2025-02-09",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[新增] 开会前显示报告人和发现的尸体",
             "[更改] 开会界面变成3列的了",
@@ -67,7 +67,7 @@
         "type": "测试版",
         "date": "2025-01-28",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[新增] 添加了工程师和科学家",
             "[新增] 名游社的钢盔有了",
@@ -84,7 +84,7 @@
         "type": "测试版",
         "date": "2025-01-28",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[新增] 国际化了主菜单",
             "[新增] 仓库按钮现在可以使用了",
@@ -100,7 +100,7 @@
         "type": "测试版",
         "date": "2025-01-26",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[新增] 等待大厅也有star了",
             "[修改] 更接近原版AU的装扮界面"
@@ -112,7 +112,7 @@
         "type": "测试版",
         "date": "2025-01-26",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[修改] 主菜单→开始的界面",
             "[新增] 更好的登录方式",
@@ -126,7 +126,7 @@
         "type": "测试版",
         "date": "2025-01-24",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[新增] 简单的账号登录功能"
         ]
@@ -137,7 +137,7 @@
         "type": "测试版",
         "date": "2025-01-24",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[汉化] 汉化了许多地方",
             "[新增] 新版本的主菜单",
@@ -151,7 +151,7 @@
         "type": "测试版",
         "date": "2025-01-22",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[新增] 新的大厅界面",
             "[新增] 一首大厅的歌曲",
@@ -165,7 +165,7 @@
         "type": "测试版",
         "date": "2025-01-22",
         "size": "未知",
-        "url": "no.html",
+        "url": "fileLost/",
         "updata": [
             "[改动] 同步了官网16:9的版本",
             "[新增] 可以使用英文自由发言(感谢The crew)",

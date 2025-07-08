@@ -684,7 +684,7 @@
             // 设置下载按钮
             const downloadBtn = document.getElementById('download-latest');
             downloadBtn.onclick = () => {
-                window.location.href = latest.url;
+                window.open(latest.url, '_blank');
             };
         }
 

@@ -12,6 +12,7 @@ from simpleHashingAlgorithm.mod import hash
 from qfluentwidgets import InfoBar, InfoBarPosition, MessageBox
 
 import json
+import os
 
 class UserDataSetting(QWidget, Ui_Form):
     def __init__(self, parent = None):
@@ -70,6 +71,7 @@ class UserDataSetting(QWidget, Ui_Form):
             data.append({"username": username, "password": int(password)})
 
         # 将数据写入 users.json 文件
+        os.makedirs(os.path.dirname('data/users.json'), exist_ok=True)
         with open('data/users.json', 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
 
