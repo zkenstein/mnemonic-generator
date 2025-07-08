@@ -9,6 +9,7 @@
     <img alt="Dynamic JSON Badge" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fzhuo-yue-shi.github.io%2FAmongUsSc%2Fdata%2Fupdata.json&query=%24.name&style=flat&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC&color=green">
     <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/zhuo-yue-shi/AmongUsSc?style=flat&logo=github&label=%E6%98%9F%E6%A0%87">
     <img alt="GitHub contributors" src="https://img.shields.io/github/contributors-anon/zhuo-yue-shi/AmongUsSc?style=flat&logo=github&label=%E8%B4%A1%E7%8C%AE%E8%80%85">
+    <img alt="Dynamic Regex Badge" src="https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fqm.qq.com%2Fq%2Fz2JDs43MdO&search=%3Cdiv%20class%3D%22group-profile-base__members%22%5B%5E%3E%5D*%3E(%5B%5E%3C%5D*)%E4%BA%BA%3C%2Fdiv%3E&replace=%241&style=flat&logo=qq&label=QQ%E7%BE%A4%E4%BA%BA%E6%95%B0">
 </p>
 
 ***
@@ -50,11 +51,17 @@ Among Us Scratch OJ 是基于 `Turbowarp` 制作的 `Among Us` 的 **复刻** �
 > [!CAUTION]
 > 如果您使用其他工具获得源码，在发布改编版本之前请通知原作者
 
+### 交流群
+![Dynamic Regex Badge](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fqm.qq.com%2Fq%2Fz2JDs43MdO&search=%3Cdiv%20data-v-b15ea110%3E(%5B%5E%3E%5D%2B)%3C%2Fdiv%3E&replace=%241&style=flat&label=%E7%BE%A4%E5%90%8D&color=yellow)
+![Dynamic Regex Badge](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fqm.qq.com%2Fq%2Fz2JDs43MdO&search=%3Cdiv%20class%3D%22group-profile-base__members%22%5B%5E%3E%5D*%3E(%5B%5E%3C%5D*)%E4%BA%BA%3C%2Fdiv%3E&replace=%241&style=flat&label=%E4%BA%BA%E6%95%B0&color=orange)
+![Static Badge](https://img.shields.io/badge/%E7%BE%A4%E5%8F%B7-965376639-blue?logo=qq)
+<a href="https://qm.qq.com/q/z2JDs43MdO"><img alt="Static Badge" src="https://img.shields.io/badge/%E7%AB%8B%E5%8D%B3%E5%8A%A0%E5%85%A5-%23855cd6?logo=qq&logoColor=white"></a>
+
 ### 贡献者
 感谢以下成员为本项目做出的贡献
 
 <div align="center">
-  <a href="https://github.com/XtremeWave/FinalSuspect/graphs/contributors">
+  <a href="https://github.com/zhuo-yue-shi/AmongUsSc/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=zhuo-yue-shi/AmongUsSc" alt="Contributors List">
   </a>
 </div>
