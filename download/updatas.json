@@ -1,5 +1,19 @@
 [
     {
+        "ver": "v1.0.3i",
+        "buildNum": 4,
+        "type": "正式版",
+        "date": "2025-07-09",
+        "size": "330 MB",
+        "url": "downloadFile/?files=files/v1.0.3i/Among Us Scratch OJ v1.0.3i Setup.part1.rar,files/v1.0.3i/Among Us Scratch OJ v1.0.3i Setup.part2.rar",
+        "updata": [
+            "[新增] OJ版本用户可以和AUSC原版用户相互联机！",
+            "[修复] 设置不会复位",
+            "[新增] 可以设置房间隐私(公开/私有/禁用)了（仅登录用户）",
+            "[云端] 此版本和之前的版本不可互相联机！"
+        ]
+    },
+    {
         "ver": "v1.0.2i",
         "buildNum": 3,
         "type": "正式版",

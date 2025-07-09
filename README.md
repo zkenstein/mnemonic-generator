@@ -19,6 +19,8 @@
 
 Among Us Scratch OJ 是基于 `Turbowarp` 制作的 `Among Us` 的 **复刻** ，使用 `TimMcCool` 的代码基础进行加装功能以更好的还原原版 `Among Us`
 
+[TOC]
+
 ### 下载
 我们从 `v1.0.2i` 版本开始便提供了安装程序。<br>
 只需访问[下载页面](https://zhuo-yue-shi.github.io/AmongUsSc/download)就可以下载安装程序。
