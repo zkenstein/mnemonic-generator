@@ -1,5 +1,21 @@
 [
     {
+        "ver": "v1.1.0i",
+        "buildNum": 5,
+        "type": "正式版",
+        "date": "2025-08-15",
+        "size": "330 MB",
+        "url": "downloadFile/?files=https://github.com/zhuo-yue-shi/AmongUsSc/releases/download/v1.1.0/Among%20Us%20Scratch%20OJ%20v1.1.0i%20Setup.exe",
+        "updata": [
+            "[新增] 新增了等级系统",
+            "[新增] 新增了商店系统",
+            "[新增] 新增了结算系统",
+            "[新增] 为商店/仓库新增了鼠标滚轮",
+            "[修改] 赌怪赌人需要按下空格才可以赌人",
+            "[云端] 此版本和之前的版本不可互相联机！"
+        ]
+    },
+    {
         "ver": "v1.0.4i",
         "buildNum": 5,
         "type": "正式版",
@@ -204,6 +220,7 @@
         ]
     }
 ]
+
 
 
 
