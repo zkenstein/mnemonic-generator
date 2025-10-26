@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="resource/230x0w.png" style="height: 300px;">
+    <img src="resource/icon.png" style="height: 300px;">
 </p>
 
 <h1 align="center">Among Us Scratch OJ</h1>
