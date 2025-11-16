@@ -3,202 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Among Us Scratch OJ介绍</title>
+    <title>正在跳转中...</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-            color: #333;
-            display: flex;
-            justify-content: center;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 600px;
             width: 100%;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1, h2, h3, h4 {
-            color: #2c3e50;
-            margin-top: 24px;
-            margin-bottom: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         h1 {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         
-        h2 {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
         
-        pre {
-            background-color: #f8f8f8;
-            padding: 16px;
-            border-radius: 4px;
-            overflow-x: auto;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        
-        code {
-            background-color: #f8f8f8;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9em;
-        }
-        
-        blockquote {
-            border-left: 4px solid #ddd;
-            padding-left: 15px;
-            color: #777;
-            margin-left: 0;
-        }
-        
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        img {
-            max-width: 100%;
-        }
-        
-        #loading {
-            text-align: center;
-            padding: 40px;
-            font-size: 1.2em;
-            color: #666;
-        }
-        
-        #error {
-            color: #e74c3c;
-            background-color: #fdecea;
-            padding: 15px;
-            border-radius: 4px;
+        .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
             margin: 20px 0;
-            display: none;
+            color: #ffcc00;
         }
         
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 15px 0;
+        .loader {
+            width: 80px;
+            height: 80px;
+            margin: 20px auto;
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 8px solid #ffcc00;
+            animation: spin 1.5s linear infinite;
         }
         
-        table, th, td {
-            border: 1px solid #ddd;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
-        th, td {
-            padding: 8px 12px;
-            text-align: left;
+        .btn {
+            display: inline-block;
+            background: #ffcc00;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+            border: none;
+            cursor: pointer;
         }
         
-        th {
-            background-color: #f2f2f2;
+        .btn:hover {
+            background: #ffd633;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
         }
         
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+        .info {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>README 文件查看器</h1>
-        <div id="loading">正在加载 README.md 文件...</div>
-        <div id="error"></div>
-        <div id="content"></div>
+        <h1>正在为您跳转</h1>
+        <p>您将在 <span id="countdown" class="countdown">5</span> 秒后自动跳转到下载页面</p>
+        
+        <div class="loader"></div>
+        
+        <p>如果页面没有自动跳转，请点击下方按钮</p>
+        <button id="redirectBtn" class="btn">立即跳转</button>
+        
+        <p class="info">正在跳转到: ./download</p>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('README.md')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('文件未找到或无法读取');
-                    }
-                    return response.text();
-                })
-                .then(text => {
-                    document.getElementById('loading').style.display = 'none';
-                    // 简单的Markdown转换
-                    const html = markdownToHtml(text);
-                    document.getElementById('content').innerHTML = html;
-                    document.getElementById('content').style.display = 'block';
-                })
-                .catch(error => {
-                    document.getElementById('loading').style.display = 'none';
-                    const errorElement = document.getElementById('error');
-                    errorElement.textContent = `错误: ${error.message}`;
-                    errorElement.style.display = 'block';
-                });
-        });
-
-        // 简单的Markdown转HTML函数
-        function markdownToHtml(markdown) {
-            // 替换标题
-            markdown = markdown.replace(/^# (.*$)/gm, '<h1>$1</h1>');
-            markdown = markdown.replace(/^## (.*$)/gm, '<h2>$1</h2>');
-            markdown = markdown.replace(/^### (.*$)/gm, '<h3>$1</h3>');
-            markdown = markdown.replace(/^#### (.*$)/gm, '<h4>$1</h4>');
+        // 目标URL
+        const targetUrl = './download';
+        
+        // 倒计时时间（秒）
+        let countdownTime = 3;
+        
+        // 获取倒计时元素
+        const countdownElement = document.getElementById('countdown');
+        
+        // 更新倒计时显示
+        function updateCountdown() {
+            countdownElement.textContent = countdownTime;
             
-            // 替换代码块
-            markdown = markdown.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
-            
-            // 替换内联代码
-            markdown = markdown.replace(/`([^`]+)`/g, '<code>$1</code>');
-            
-            // 替换链接
-            markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-            
-            // 替换图片
-            markdown = markdown.replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
-            
-            // 替换粗体
-            markdown = markdown.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-            markdown = markdown.replace(/__([^_]+)__/g, '<strong>$1</strong>');
-            
-            // 替换斜体
-            markdown = markdown.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-            markdown = markdown.replace(/_([^_]+)_/g, '<em>$1</em>');
-            
-            // 替换引用
-            markdown = markdown.replace(/^> (.*$)/gm, '<blockquote>$1</blockquote>');
-            
-            // 替换无序列表
-            markdown = markdown.replace(/^\s*\*\s(.*$)/gm, '<li>$1</li>');
-            markdown = markdown.replace(/^\s*-\s(.*$)/gm, '<li>$1</li>');
-            markdown = markdown.replace(/^\s*\+\s(.*$)/gm, '<li>$1</li>');
-            markdown = markdown.replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>');
-            
-            // 替换有序列表
-            markdown = markdown.replace(/^\s*\d+\.\s(.*$)/gm, '<li>$1</li>');
-            markdown = markdown.replace(/(<li>.*<\/li>)/g, '<ol>$1</ol>');
-            
-            // 替换水平线
-            markdown = markdown.replace(/^\-\-\-$/gm, '<hr>');
-            
-            // 替换换行符为<br>
-            markdown = markdown.replace(/\n/g, '<br>');
-            
-            return markdown;
+            if (countdownTime <= 0) {
+                // 倒计时结束，执行跳转
+                window.location.href = targetUrl;
+            } else {
+                countdownTime--;
+                // 每秒更新一次
+                setTimeout(updateCountdown, 1000);
+            }
         }
+        
+        // 手动跳转按钮
+        document.getElementById('redirectBtn').addEventListener('click', function() {
+            window.location.href = targetUrl;
+        });
+        
+        // 页面加载后开始倒计时
+        window.onload = function() {
+            updateCountdown();
+        };
     </script>
 </body>
 </html>
